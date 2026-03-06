@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  engine:
+    build: .
+    container_name: dataflow_engine_core
+    volumes:
+      # MAPEAMENTO DE VOLUMES (O truque mágico)
+      # Tudo que está na pasta ./src da SUA máquina reflete em /app/src no contêiner
+      - ./src:/app/src
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./docs:/app/docs
+    # Permite acesso interativo via terminal
+    stdin_open: true
+    tty: true

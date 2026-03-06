@@ -1,0 +1,15 @@
+# Pastas de dados (Não queremos comitar planilhas e PDFs com dados reais de clientes)
+input/*
+output/*
+!input/.gitkeep
+!output/.gitkeep
+
+# Ambientes virtuais e lixo do Python
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+
+# Lixo de IDE (VS Code, Mac)
+.vscode/
+.DS_Store
