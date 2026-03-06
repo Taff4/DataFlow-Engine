@@ -53,3 +53,37 @@ graph TD
     
     Excel --> Postgres
     PDF --> Postgres
+
+## 2. Diagrama de Entidade-Relacionamento (Banco de Dados)
+Modelo básico de como as entidades se relacionam no nosso banco para auditoria.
+```mermaid
+erDiagram
+    USERS ||--o{ JOBS : creates
+    JOBS ||--|{ AUDIT_LOGS : generates
+    
+    USERS {
+        uuid id PK
+        string email
+        string password_hash
+        string role "admin, user"
+        datetime created_at
+    }
+    
+    JOBS {
+        uuid id PK
+        uuid user_id FK
+        string original_filename
+        string file_type "excel, pdf"
+        string status "pending, processing, success, error"
+        string output_path
+        datetime started_at
+        datetime finished_at
+    }
+    
+    AUDIT_LOGS {
+        uuid id PK
+        uuid job_id FK
+        string action "file_received, data_cleaned, rows_removed, saved"
+        text error_traceback
+        datetime timestamp
+    }
