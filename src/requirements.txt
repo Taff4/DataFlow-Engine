@@ -1,0 +1,18 @@
+# ==========================================
+# DataFlow Engine - Dependências do Backend
+# ==========================================
+
+# --- Core e Segurança ---
+pydantic==2.6.3      # Validação rígida de dados e tipagem
+python-dotenv==1.0.1 # Gerenciamento seguro de variáveis de ambiente/senhas
+
+# --- Motores de Processamento de Dados ---
+pandas==2.2.1        # Processamento de dados em massa (Backend Core)
+openpyxl==3.1.2      # Motor de leitura/escrita de Excel nativo
+pdfplumber==0.11.0   # Extração determinística de PDFs e Notas Fiscais
+
+# --- Camada de Apresentação (CLI) ---
+typer==0.9.0         # Interface de linha de comando
+
+# --- Qualidade e Esteira (CI/CD) ---
+pytest==8.0.2        # Framework TDD
