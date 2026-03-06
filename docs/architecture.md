@@ -53,7 +53,7 @@ graph TD
     
     Excel --> Postgres
     PDF --> Postgres
-
+```mermaid
 ## 2. Diagrama de Entidade-Relacionamento (Banco de Dados)
 Modelo básico de como as entidades se relacionam no nosso banco para auditoria.
 ```mermaid
