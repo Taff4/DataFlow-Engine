@@ -88,3 +88,20 @@ erDiagram
         text error_traceback
         datetime timestamp
     }
+```
+## 3. Diagrama de Classes (Processadores)
+Estrutura de herança dos processadores de arquivos do Core.
+```mermaid
+classDiagram
+    class BaseProcessor {
+        <<interface>>
+        +process(filepath: str) dict
+    }
+    class ExcelProcessor {
+        +remove_duplicates()
+    }
+    class PDFProcessor {
+        +extract_tables()
+    }
+    BaseProcessor <|-- ExcelProcessor
+    BaseProcessor <|-- PDFProcessor
