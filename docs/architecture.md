@@ -53,33 +53,3 @@ graph TD
     
     Excel --> Postgres
     PDF --> Postgres
-
-erDiagram
-    USERS ||--o{ JOBS : creates
-    JOBS ||--|{ AUDIT_LOGS : generates
-    
-    USERS {
-        uuid id PK
-        string email
-        string role
-    }
-    
-    JOBS {
-        uuid id PK
-        string original_filename
-        string status
-    }
-    
-classDiagram
-    class BaseProcessor {
-        <<interface>>
-        +process(filepath: str) dict
-    }
-    class ExcelProcessor {
-        +remove_duplicates()
-    }
-    class PDFProcessor {
-        +extract_tables()
-    }
-    BaseProcessor <|-- ExcelProcessor
-    BaseProcessor <|-- PDFProcessor
